@@ -1,0 +1,28 @@
+
+#!/bin/sh
+
+# setup nuwacoin account, homedir etc
+
+set -e
+
+NACUSER="nuwacoin"
+NACHOME="/var/lib/nuwacoin"
+
+if [ "$1" = "configure" ]; then
+	# Add nuwacoin user/group - this will gracefully abort if the user already exists.
+	# A homedir is never created.
+	set +e
+	adduser --system --home "${NACHOME}" --no-create-home --group "${NACUSER}" 2>/dev/null
+	set -e
+
+	# If the homedir does not already exist, create it with proper
+	# ownership and permissions.
+	if [ ! -d "${NACHOME}" ]; then
+		mkdir -m 0750 -p "${NACHOME}"
+		chown "${NACUSER}:${NACUSER}" "${NACHOME}"
+	fi
+fi
+
+#DEBHELPER#
+
+exit 0

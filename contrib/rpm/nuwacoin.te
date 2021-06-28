@@ -1,0 +1,81 @@
+policy_module(nuwacoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type nuwacoin_t;
+type nuwacoin_exec_t;
+init_daemon_domain(nuwacoin_t, nuwacoin_exec_t)
+
+permissive nuwacoin_t;
+
+type nuwacoin_initrc_exec_t;
+init_script_file(nuwacoin_initrc_exec_t)
+
+type nuwacoin_conf_t;
+files_type(nuwacoin_conf_t)
+
+type nuwacoin_var_lib_t;
+files_type(nuwacoin_var_lib_t)
+
+type nuwacoin_var_run_t;
+files_type(nuwacoin_var_run_t)
+
+type nuwacoin_port_t;
+corenet_port(nuwacoin_port_t)
+
+########################################
+#
+# nuwacoin local policy
+#
+allow nuwacoin_t self:process { fork };
+
+allow nuwacoin_t self:fifo_file rw_fifo_file_perms;
+allow nuwacoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(nuwacoin_t, nuwacoin_conf_t, nuwacoin_conf_t)
+manage_files_pattern(nuwacoin_t, nuwacoin_conf_t, nuwacoin_conf_t)
+
+manage_dirs_pattern(nuwacoin_t, nuwacoin_var_lib_t, nuwacoin_var_lib_t)
+manage_files_pattern(nuwacoin_t, nuwacoin_var_lib_t, nuwacoin_var_lib_t)
+files_var_lib_filetrans(nuwacoin_t, nuwacoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(nuwacoin_t, nuwacoin_var_run_t, nuwacoin_var_run_t)
+manage_files_pattern(nuwacoin_t, nuwacoin_var_run_t, nuwacoin_var_run_t)
+
+sysnet_dns_name_resolve(nuwacoin_t)
+corenet_all_recvfrom_unlabeled(nuwacoin_t)
+
+allow nuwacoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(nuwacoin_t)
+corenet_tcp_sendrecv_generic_node(nuwacoin_t)
+corenet_tcp_sendrecv_all_ports(nuwacoin_t)
+corenet_tcp_bind_generic_node(nuwacoin_t)
+
+gen_require(`
+    type nuwacoin_port_t;
+')
+allow nuwacoin_t nuwacoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type nuwacoin_port_t;
+')
+allow nuwacoin_t nuwacoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(nuwacoin_t)
+
+files_read_etc_files(nuwacoin_t)
+
+miscfiles_read_localization(nuwacoin_t)
+
+sysnet_dns_name_resolve(nuwacoin_t)
+
+allow nuwacoin_t nuwacoin_exec_t:file execute_no_trans;
+allow nuwacoin_t self:process setsched;
+corecmd_exec_ls(nuwacoin_t)
+corenet_tcp_connect_http_port(nuwacoin_t)
+dev_read_urand(nuwacoin_t)
+fs_getattr_xattr_fs(nuwacoin_t)
+kernel_read_system_state(nuwacoin_t)

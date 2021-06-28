@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=NuwaCoin
+Comment=NuwaCoin P2P Cryptocurrency
+Comment[fr]=NuwaCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=NuwaCoin, eşten eşe kriptografik sanal para birimi
+Exec=nuwacoin-qt %u
+Terminal=false
+Type=Application
+Icon=nuwacoin128
+MimeType=x-scheme-handler/nuwacoin;
+Categories=Office;Finance;
+StartupWMClass=NuwaCoin-qt

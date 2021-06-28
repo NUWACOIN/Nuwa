@@ -1,0 +1,6 @@
+usr/local/bin/nuwacoin-qt usr/bin
+share/pixmaps/nuwacoin32.xpm usr/share/pixmaps
+share/pixmaps/nuwacoin16.xpm usr/share/pixmaps
+share/pixmaps/nuwacoin128.png usr/share/pixmaps
+debian/nuwacoin-qt.desktop usr/share/applications
+debian/nuwacoin-qt.protocol usr/share/kde4/services/

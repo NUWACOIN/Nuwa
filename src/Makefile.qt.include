@@ -1,0 +1,710 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+bin_PROGRAMS += qt/nuwacoin-qt
+EXTRA_LIBRARIES += qt/libbitcoinqt.a
+
+# nuwacoin qt core #
+include Makefile.qt_locale.include
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/rpcconsole.ui \
+  qt/nuwacoin/forms/loadingdialog.ui \
+  qt/nuwacoin/forms/snackbar.ui \
+  qt/nuwacoin/forms/navmenuwidget.ui \
+  qt/nuwacoin/forms/lockunlock.ui \
+  qt/nuwacoin/forms/expandablebutton.ui \
+  qt/nuwacoin/forms/receivedialog.ui \
+  qt/nuwacoin/forms/topbar.ui \
+  qt/nuwacoin/forms/txrow.ui \
+  qt/nuwacoin/forms/dashboardwidget.ui \
+  qt/nuwacoin/forms/addresslabelrow.ui \
+  qt/nuwacoin/forms/contactdropdownrow.ui \
+  qt/nuwacoin/forms/mninfodialog.ui \
+  qt/nuwacoin/forms/optionbutton.ui \
+  qt/nuwacoin/forms/masternodewizarddialog.ui \
+  qt/nuwacoin/forms/mnrow.ui \
+  qt/nuwacoin/forms/masternodeswidget.ui \
+  qt/nuwacoin/forms/myaddressrow.ui \
+  qt/nuwacoin/forms/csrow.ui \
+  qt/nuwacoin/forms/sendchangeaddressdialog.ui \
+  qt/nuwacoin/forms/sendconfirmdialog.ui \
+  qt/nuwacoin/forms/sendcustomfeedialog.ui \
+  qt/nuwacoin/forms/sendchangeaddressdialog.ui \
+  qt/nuwacoin/forms/sendmultirow.ui \
+  qt/nuwacoin/forms/send.ui \
+  qt/nuwacoin/forms/addnewaddressdialog.ui \
+  qt/nuwacoin/forms/addnewcontactdialog.ui \
+  qt/nuwacoin/forms/requestdialog.ui \
+  qt/nuwacoin/forms/receivewidget.ui \
+  qt/nuwacoin/forms/tooltipmenu.ui \
+  qt/nuwacoin/forms/addresseswidget.ui \
+  qt/nuwacoin/forms/defaultdialog.ui \
+  qt/nuwacoin/forms/coldstakingwidget.ui \
+  qt/nuwacoin/settings/forms/settingsbackupwallet.ui \
+  qt/nuwacoin/settings/forms/settingsexportcsv.ui \
+  qt/nuwacoin/settings/forms/settingsbittoolwidget.ui \
+  qt/nuwacoin/settings/forms/settingsconsolewidget.ui \
+  qt/nuwacoin/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/nuwacoin/settings/forms/settingsfaqwidget.ui \
+  qt/nuwacoin/settings/forms/settingsinformationwidget.ui \
+  qt/nuwacoin/settings/forms/settingsmainoptionswidget.ui \
+  qt/nuwacoin/settings/forms/settingsmultisenddialog.ui \
+  qt/nuwacoin/settings/forms/settingsmultisendwidget.ui \
+  qt/nuwacoin/settings/forms/settingssignmessagewidgets.ui \
+  qt/nuwacoin/settings/forms/settingswalletoptionswidget.ui \
+  qt/nuwacoin/settings/forms/settingswalletrepairwidget.ui \
+  qt/nuwacoin/settings/forms/settingswidget.ui \
+  qt/nuwacoin/forms/welcomecontentwidget.ui \
+  qt/nuwacoin/forms/splash.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_bitcoinaddressvalidator.cpp \
+  qt/nuwacoin/moc_nuwacoingui.cpp \
+  qt/moc_bitcoinunits.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/nuwacoin/moc_loadingdialog.cpp \
+  qt/nuwacoin/moc_pwidget.cpp \
+  qt/nuwacoin/moc_focuseddialog.cpp \
+  qt/nuwacoin/moc_snackbar.cpp \
+  qt/nuwacoin/moc_navmenuwidget.cpp \
+  qt/nuwacoin/moc_lockunlock.cpp \
+  qt/nuwacoin/moc_expandablebutton.cpp \
+  qt/nuwacoin/moc_furabstractlistitemdelegate.cpp \
+  qt/nuwacoin/moc_receivedialog.cpp \
+  qt/nuwacoin/moc_pfborderimage.cpp \
+  qt/nuwacoin/moc_topbar.cpp \
+  qt/nuwacoin/moc_txrow.cpp \
+  qt/nuwacoin/moc_dashboardwidget.cpp \
+  qt/nuwacoin/moc_addresslabelrow.cpp \
+  qt/nuwacoin/moc_contactdropdownrow.cpp \
+  qt/nuwacoin/moc_mninfodialog.cpp \
+  qt/nuwacoin/moc_optionbutton.cpp \
+  qt/nuwacoin/moc_coldstakingmodel.cpp \
+  qt/nuwacoin/moc_mnmodel.cpp \
+  qt/nuwacoin/moc_masternodewizarddialog.cpp \
+  qt/nuwacoin/moc_mnrow.cpp \
+  qt/nuwacoin/moc_masternodeswidget.cpp \
+  qt/nuwacoin/moc_myaddressrow.cpp \
+  qt/nuwacoin/moc_csrow.cpp \
+  qt/nuwacoin/moc_contactsdropdown.cpp \
+  qt/nuwacoin/moc_sendchangeaddressdialog.cpp \
+  qt/nuwacoin/moc_sendconfirmdialog.cpp \
+  qt/nuwacoin/moc_sendcustomfeedialog.cpp \
+  qt/nuwacoin/moc_sendchangeaddressdialog.cpp \
+  qt/nuwacoin/moc_sendmultirow.cpp \
+  qt/nuwacoin/moc_send.cpp \
+  qt/nuwacoin/moc_addnewaddressdialog.cpp \
+  qt/nuwacoin/moc_addnewcontactdialog.cpp \
+  qt/nuwacoin/moc_requestdialog.cpp \
+  qt/nuwacoin/moc_receivewidget.cpp \
+  qt/nuwacoin/moc_tooltipmenu.cpp \
+  qt/nuwacoin/moc_addresseswidget.cpp \
+  qt/nuwacoin/moc_defaultdialog.cpp \
+  qt/nuwacoin/moc_coldstakingwidget.cpp \
+  qt/nuwacoin/settings/moc_settingsbackupwallet.cpp \
+  qt/nuwacoin/settings/moc_settingsexportcsv.cpp \
+  qt/nuwacoin/settings/moc_settingsbittoolwidget.cpp \
+  qt/nuwacoin/settings/moc_settingsconsolewidget.cpp \
+  qt/nuwacoin/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/nuwacoin/settings/moc_settingsfaqwidget.cpp \
+  qt/nuwacoin/settings/moc_settingsinformationwidget.cpp \
+  qt/nuwacoin/settings/moc_settingsmainoptionswidget.cpp \
+  qt/nuwacoin/settings/moc_settingsmultisenddialog.cpp \
+  qt/nuwacoin/settings/moc_settingsmultisendwidget.cpp \
+  qt/nuwacoin/settings/moc_settingssignmessagewidgets.cpp \
+  qt/nuwacoin/settings/moc_settingswalletoptionswidget.cpp \
+  qt/nuwacoin/settings/moc_settingswalletrepairwidget.cpp \
+  qt/nuwacoin/settings/moc_settingswidget.cpp \
+  qt/nuwacoin/moc_welcomecontentwidget.cpp \
+  qt/nuwacoin/moc_splash.cpp
+
+BITCOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/nuwacoin.moc \
+  qt/intro.moc \
+  qt/rpcconsole.moc \
+  qt/nuwacoin/settings/moc_settingsconsolewidget.cpp
+
+QT_QRC_CPP = qt/qrc_nuwacoin.cpp
+QT_QRC = qt/nuwacoin.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_nuwacoin_locale.cpp
+QT_QRC_LOCALE = qt/nuwacoin_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+BITCOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/bitcoinaddressvalidator.h \
+  qt/nuwacoin/nuwacoingui.h \
+  qt/bitcoinunits.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/trafficgraphwidget.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/utilitydialog.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/nuwacoin/prunnable.h \
+  qt/nuwacoin/pfborderimage.h \
+  qt/nuwacoin/loadingdialog.h \
+  qt/winshutdownmonitor.h \
+  qt/nuwacoin/pwidget.h \
+  qt/nuwacoin/focuseddialog.h \
+  qt/nuwacoin/guitransactionsutils.h \
+  qt/nuwacoin/snackbar.h \
+  qt/nuwacoin/navmenuwidget.h \
+  qt/nuwacoin/lockunlock.h \
+  qt/nuwacoin/receivedialog.h \
+  qt/nuwacoin/furlistrow.h \
+  qt/nuwacoin/furabstractlistitemdelegate.h \
+  qt/nuwacoin/txviewholder.h \
+  qt/nuwacoin/qtutils.h \
+  qt/nuwacoin/expandablebutton.h \
+  qt/nuwacoin/topbar.h \
+  qt/nuwacoin/txrow.h \
+  qt/nuwacoin/addressholder.h \
+  qt/nuwacoin/addressfilterproxymodel.h \
+  qt/nuwacoin/dashboardwidget.h \
+  qt/nuwacoin/addresslabelrow.h \
+  qt/nuwacoin/contactdropdownrow.h \
+  qt/nuwacoin/mninfodialog.h \
+  qt/nuwacoin/optionbutton.h \
+  qt/nuwacoin/coldstakingmodel.h \
+  qt/nuwacoin/mnmodel.h \
+  qt/nuwacoin/masternodewizarddialog.h \
+  qt/nuwacoin/mnrow.h \
+  qt/nuwacoin/masternodeswidget.h \
+  qt/nuwacoin/myaddressrow.h \
+  qt/nuwacoin/csrow.h \
+  qt/nuwacoin/contactsdropdown.h \
+  qt/nuwacoin/sendchangeaddressdialog.h \
+  qt/nuwacoin/sendconfirmdialog.h \
+  qt/nuwacoin/sendcustomfeedialog.h \
+  qt/nuwacoin/sendchangeaddressdialog.h \
+  qt/nuwacoin/sendmultirow.h \
+  qt/nuwacoin/send.h \
+  qt/nuwacoin/addnewaddressdialog.h \
+  qt/nuwacoin/addnewcontactdialog.h \
+  qt/nuwacoin/requestdialog.h \
+  qt/nuwacoin/receivewidget.h \
+  qt/nuwacoin/tooltipmenu.h \
+  qt/nuwacoin/addresseswidget.h \
+  qt/nuwacoin/defaultdialog.h \
+  qt/nuwacoin/coldstakingwidget.h \
+  qt/nuwacoin/settings/settingsbackupwallet.h \
+  qt/nuwacoin/settings/settingsexportcsv.h \
+  qt/nuwacoin/settings/settingsbittoolwidget.h \
+  qt/nuwacoin/settings/settingsconsolewidget.h \
+  qt/nuwacoin/settings/settingsdisplayoptionswidget.h \
+  qt/nuwacoin/settings/settingsfaqwidget.h \
+  qt/nuwacoin/settings/settingsinformationwidget.h \
+  qt/nuwacoin/settings/settingsmainoptionswidget.h \
+  qt/nuwacoin/settings/settingsmultisenddialog.h \
+  qt/nuwacoin/settings/settingsmultisendwidget.h \
+  qt/nuwacoin/settings/settingssignmessagewidgets.h \
+  qt/nuwacoin/settings/settingswalletoptionswidget.h \
+  qt/nuwacoin/settings/settingswalletrepairwidget.h \
+  qt/nuwacoin/settings/settingswidget.h \
+  qt/nuwacoin/welcomecontentwidget.h \
+  qt/nuwacoin/splash.h
+
+RES_ICONS = \
+  qt/res/icons/bitcoin.ico \
+  qt/res/icons/bitcoin.png \
+  qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/ic-transaction-received.png \
+  qt/res/icons/ic-transaction-mint.png \
+  qt/res/icons/ic-transaction-sent.png \
+  qt/res/icons/ic-transaction-staked.png \
+  qt/nuwacoin/res/img/bg-dashboard-banner.png \
+  qt/nuwacoin/res/img/bg-multi-number-dark.png \
+  qt/nuwacoin/res/img/ic-check-locked.png \
+  qt/nuwacoin/res/img/ic-nav-address.png \
+  qt/nuwacoin/res/img/ic-update.png \
+  qt/nuwacoin/res/img/bg-multi-number.png \
+  qt/nuwacoin/res/img/ic-check-mint-off.png \
+  qt/nuwacoin/res/img/ic-nav-cold-staking.png \
+  qt/nuwacoin/res/img/ic-nav-cold-staking-active.png \
+  qt/nuwacoin/res/img/ic-nav-dashboard-active.png \
+  qt/nuwacoin/res/img/ic-wallet-status-locked.png \
+  qt/nuwacoin/res/img/bg-splash.png \
+  qt/nuwacoin/res/img/ic-check-mint.png \
+  qt/nuwacoin/res/img/ic-nav-dashboard-hover.png \
+  qt/nuwacoin/res/img/ic-wallet-status-staking.png \
+  qt/nuwacoin/res/img/ic-check-peers-off.png \
+  qt/nuwacoin/res/img/ic-nav-dashboard.png \
+  qt/nuwacoin/res/img/ic-wallet-status-unlocked.png \
+  qt/nuwacoin/res/img/ic-check-peers.png \
+  qt/nuwacoin/res/img/ic-nav-master-active.png \
+  qt/nuwacoin/res/img/ic-watch-password-white.png \
+  qt/nuwacoin/res/img/bg-welcome-container.jpg \
+  qt/nuwacoin/res/img/bg-welcome-container.png \
+  qt/nuwacoin/res/img/bg-welcome-container@2x.png \
+  qt/nuwacoin/res/img/bg-welcome-container@3x.png \
+  qt/nuwacoin/res/img/ic-check-staking-off.png \
+  qt/nuwacoin/res/img/ic-nav-master-hover.png \
+  qt/nuwacoin/res/img/ic-watch-password.png \
+  qt/nuwacoin/res/img/bg-welcome.jpg \
+  qt/nuwacoin/res/img/bg-welcome.png \
+  qt/nuwacoin/res/img/ic-check-staking.png \
+  qt/nuwacoin/res/img/ic-nav-master.png \
+  qt/nuwacoin/res/img/img-dashboard-banner.jpg \
+  qt/nuwacoin/res/img/btn-radio-active.png \
+  qt/nuwacoin/res/img/ic-check-sync-off.png \
+  qt/nuwacoin/res/img/ic-nav-privacy-active.png \
+  qt/nuwacoin/res/img/img-empty-contacts.png \
+  qt/nuwacoin/res/img/btn-radio-off.png \
+  qt/nuwacoin/res/img/ic-nav-privacy-hover.png \
+  qt/nuwacoin/res/img/img-empty-dark-contacts.png \
+  qt/nuwacoin/res/img/ic-contact-arrow-down.png \
+  qt/nuwacoin/res/img/ic-contact-arrow-down-white.png \
+  qt/nuwacoin/res/img/ic-check-sync.png \
+  qt/nuwacoin/res/img/ic-check-faq.png \
+  qt/nuwacoin/res/img/ic-nav-privacy.png \
+  qt/nuwacoin/res/img/img-empty-dark-error.png \
+  qt/nuwacoin/res/img/ic-add-label.png \
+  qt/nuwacoin/res/img/ic-pending.png \
+  qt/nuwacoin/res/img/ic-check-theme-dark.png \
+  qt/nuwacoin/res/img/ic-nav-receive-active.png \
+  qt/nuwacoin/res/img/img-empty-dark-masternode.png \
+  qt/nuwacoin/res/img/ic-add-liliac.png \
+  qt/nuwacoin/res/img/ic-check-theme-light.png \
+  qt/nuwacoin/res/img/ic-nav-receive-hover.png \
+  qt/nuwacoin/res/img/img-empty-dark-multisend.png \
+  qt/nuwacoin/res/img/ic-add-purple.png \
+  qt/nuwacoin/res/img/ic-check-white.png \
+  qt/nuwacoin/res/img/ic-nav-receive.png \
+  qt/nuwacoin/res/img/img-empty-dark-peers.png \
+  qt/nuwacoin/res/img/ic-add.png \
+  qt/nuwacoin/res/img/ic-check.png \
+  qt/nuwacoin/res/img/ic-nav-send-active.png \
+  qt/nuwacoin/res/img/img-empty-dark-staking-off.png \
+  qt/nuwacoin/res/img/img-empty-dark-staking-on.png \
+  qt/nuwacoin/res/img/ic-address-book-grey.png \
+  qt/nuwacoin/res/img/ic-chevron-left.png \
+  qt/nuwacoin/res/img/ic-nav-send-hover.png \
+  qt/nuwacoin/res/img/img-empty-dark-transactions.png \
+  qt/nuwacoin/res/img/ic-address-book-white.png \
+  qt/nuwacoin/res/img/ic-chevron-right.png \
+  qt/nuwacoin/res/img/ic-nav-send.png \
+  qt/nuwacoin/res/img/img-empty-error.png \
+  qt/nuwacoin/res/img/ic-address-book.png \
+  qt/nuwacoin/res/img/ic-clear-liliac.png \
+  qt/nuwacoin/res/img/ic-nav-settings-active.png \
+  qt/nuwacoin/res/img/img-empty-masternode.png \
+  qt/nuwacoin/res/img/ic-address-send-white.png \
+  qt/nuwacoin/res/img/ic-clear-purple.png \
+  qt/nuwacoin/res/img/ic-nav-settings-hover.png \
+  qt/nuwacoin/res/img/img-empty-multisend.png \
+  qt/nuwacoin/res/img/ic-address-send.png \
+  qt/nuwacoin/res/img/ic-close-white.png \
+  qt/nuwacoin/res/img/ic-nav-settings.png \
+  qt/nuwacoin/res/img/img-empty-peers.png \
+  qt/nuwacoin/res/img/img-empty-privacy.png \
+  qt/nuwacoin/res/img/img-empty-privacy-dark.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-down-white.png \
+  qt/nuwacoin/res/img/ic-close.png \
+  qt/nuwacoin/res/img/ic-radio-liliac-on.png \
+  qt/nuwacoin/res/img/img-empty-staking-off.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-down.png \
+  qt/nuwacoin/res/img/ic-coin-nac.png \
+  qt/nuwacoin/res/img/ic-receive-off.png \
+  qt/nuwacoin/res/img/img-empty-staking-on.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-up-white.png \
+  qt/nuwacoin/res/img/ic-receive-on.png \
+  qt/nuwacoin/res/img/img-empty-transactions.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-up.png \
+  qt/nuwacoin/res/img/ic-received.png \
+  qt/nuwacoin/res/img/img-logo-nuwacoin.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-white-down.png \
+  qt/nuwacoin/res/img/ic-combo-box.png \
+  qt/nuwacoin/res/img/ic-send.png \
+  qt/nuwacoin/res/img/img-logo-nuwacoin@2x.png \
+  qt/nuwacoin/res/img/ic-arrow-purple-down.png \
+  qt/nuwacoin/res/img/ic-connect.png \
+  qt/nuwacoin/res/img/ic-submenu-lock.png \
+  qt/nuwacoin/res/img/img-logo-nuwacoin@3x.png \
+  qt/nuwacoin/res/img/img-logo-nuwacoin.png \
+  qt/nuwacoin/res/img/ic-arrow-right-white.png \
+  qt/nuwacoin/res/img/ic-arrow-left-white.png \
+  qt/nuwacoin/res/img/ic-arrow-left.png \
+  qt/nuwacoin/res/img/ic-copy-liliac.png \
+  qt/nuwacoin/res/img/ic-submenu-staking.png \
+  qt/nuwacoin/res/img/img-nav-logo-nuwacoin.png \
+  qt/nuwacoin/res/img/ic-arrow-right.png \
+  qt/nuwacoin/res/img/ic-copy.png \
+  qt/nuwacoin/res/img/ic-copy-big.png \
+  qt/nuwacoin/res/img/ic-copy-big-white.png \
+  qt/nuwacoin/res/img/ic-submenu-unlock.png \
+  qt/nuwacoin/res/img/img-nav-logo.png \
+  qt/nuwacoin/res/img/ic-arrow-white-left.png \
+  qt/nuwacoin/res/img/ic-exit.png \
+  qt/nuwacoin/res/img/ic-switch-liliac-on.png \
+  qt/nuwacoin/res/img/img-nav-logo.png \
+  qt/nuwacoin/res/img/ic-arrow-white-right.png \
+  qt/nuwacoin/res/img/ic-expand.png \
+  qt/nuwacoin/res/img/ic-switch-off.png \
+  qt/nuwacoin/res/img/img-qr-test-big.png \
+  qt/nuwacoin/res/img/ic-check-active.png \
+  qt/nuwacoin/res/img/ic-folder.png \
+  qt/nuwacoin/res/img/ic-switch-on.png \
+  qt/nuwacoin/res/img/img-qr-test.png \
+  qt/nuwacoin/res/img/ic-check-box.png \
+  qt/nuwacoin/res/img/ic-check-box-dark-active.png \
+  qt/nuwacoin/res/img/ic-check-box-indeterminate.png \
+  qt/nuwacoin/res/img/ic-check-box-liliac-indeterminate.png \
+  qt/nuwacoin/res/img/ic-label-liliac.png \
+  qt/nuwacoin/res/img/ic-transaction-warning.png \
+  qt/nuwacoin/res/img/ic-transaction-mint.png \
+  qt/nuwacoin/res/img/ic-transaction-mint-inactive.png \
+  qt/nuwacoin/res/img/ic-check-cold-staking.png \
+  qt/nuwacoin/res/img/ic-check-cold-staking-off.png \
+  qt/nuwacoin/res/img/ic-check-cold-staking-enabled.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-cs-contract.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-cs-contract-inactive.png \
+  qt/nuwacoin/res/img/img-qr.png \
+  qt/nuwacoin/res/img/ic-check-connect-off.png \
+  qt/nuwacoin/res/img/ic-check-tor-off.png \
+  qt/nuwacoin/res/img/ic-check-tor.png \
+  qt/nuwacoin/res/img/ic-label.png \
+  qt/nuwacoin/res/img/ic-transaction-received.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-received.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-warning.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-mint.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-mint-inactive.png \
+  qt/nuwacoin/res/img/ic-transaction-received-inactive.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-received-inactive.png \
+  qt/nuwacoin/res/img/img-welcome-step1.png \
+  qt/nuwacoin/res/img/ic-check-connect.png \
+  qt/nuwacoin/res/img/ic-menu-hover.png \
+  qt/nuwacoin/res/img/ic-transaction-sent.png \
+  qt/nuwacoin/res/img/ic-transaction-sent-inactive.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-sent.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-sent-inactive.png \
+  qt/nuwacoin/res/img/img-welcome-step2.png \
+  qt/nuwacoin/res/img/ic-check-dark.png \
+  qt/nuwacoin/res/img/ic-mint.png \
+  qt/nuwacoin/res/img/ic-transaction-staked.png \
+  qt/nuwacoin/res/img/ic-transaction-staked-inactive.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-staked.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-staked-inactive.png \
+  qt/nuwacoin/res/img/img-welcome-step3.png \
+  qt/nuwacoin/res/img/ic-check-liliac-on.png \
+  qt/nuwacoin/res/img/ic-nav-address-active.png \
+  qt/nuwacoin/res/img/ic-unlock-staking.png \
+  qt/nuwacoin/res/img/img-welcome-step4.png \
+  qt/nuwacoin/res/img/ic-check-locked-off.png \
+  qt/nuwacoin/res/img/ic-nav-address-hover.png \
+  qt/nuwacoin/res/img/ic-update-liliac.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-down-purple.png \
+  qt/nuwacoin/res/img/ic-arrow-drop-up-purple.png \
+  qt/nuwacoin/res/img/ic-check-liliac-indeterminate.png \
+  qt/nuwacoin/res/img/ic-check-box-liliac-indeterminate.png \
+  qt/nuwacoin/res/img/ic-transaction-stake-delegated.png \
+  qt/nuwacoin/res/img/ic-transaction-stake-delegated-inactive.png \
+  qt/nuwacoin/res/img/ic-transaction-stake-hot.png \
+  qt/nuwacoin/res/img/ic-transaction-stake-hot-inactive.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-stake-hot.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-stake-hot-inactive.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-stake-delegated.png \
+  qt/nuwacoin/res/img/dark/ic-transaction-stake-delegated-inactive.png \
+  qt/nuwacoin/res/img/ic-transaction-cs-contract.png \
+  qt/nuwacoin/res/img/ic-transaction-cs-contract-inactive.png \
+  qt/nuwacoin/res/img/ic-check-box-indeterminate.png \
+  qt/nuwacoin/res/img/ani-loading-dark.gif \
+  qt/nuwacoin/res/img/ani-loading.gif
+
+
+
+BITCOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/bitcoinaddressvalidator.cpp \
+  qt/nuwacoin/nuwacoingui.cpp \
+  qt/bitcoinunits.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+
+BITCOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/openuridialog.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/nuwacoin/loadingdialog.cpp \
+  qt/nuwacoin/pwidget.cpp \
+  qt/nuwacoin/focuseddialog.cpp \
+  qt/nuwacoin/guitransactionsutils.cpp \
+  qt/nuwacoin/snackbar.cpp \
+  qt/nuwacoin/navmenuwidget.cpp \
+  qt/nuwacoin/lockunlock.cpp \
+  qt/nuwacoin/receivedialog.cpp \
+  qt/nuwacoin/furabstractlistitemdelegate.cpp \
+  qt/nuwacoin/txviewholder.cpp \
+  qt/nuwacoin/qtutils.cpp \
+  qt/nuwacoin/expandablebutton.cpp \
+  qt/nuwacoin/topbar.cpp \
+  qt/nuwacoin/txrow.cpp \
+  qt/nuwacoin/addressholder.cpp \
+  qt/nuwacoin/addressfilterproxymodel.cpp \
+  qt/nuwacoin/dashboardwidget.cpp \
+  qt/nuwacoin/addresslabelrow.cpp \
+  qt/nuwacoin/contactdropdownrow.cpp \
+  qt/nuwacoin/contactsdropdown.cpp \
+  qt/nuwacoin/optionbutton.cpp \
+  qt/nuwacoin/mninfodialog.cpp \
+  qt/nuwacoin/coldstakingmodel.cpp \
+  qt/nuwacoin/mnmodel.cpp \
+  qt/nuwacoin/masternodewizarddialog.cpp \
+  qt/nuwacoin/mnrow.cpp \
+  qt/nuwacoin/masternodeswidget.cpp \
+  qt/nuwacoin/myaddressrow.cpp \
+  qt/nuwacoin/csrow.cpp \
+  qt/nuwacoin/sendchangeaddressdialog.cpp \
+  qt/nuwacoin/sendconfirmdialog.cpp \
+  qt/nuwacoin/sendcustomfeedialog.cpp \
+  qt/nuwacoin/sendchangeaddressdialog.cpp \
+  qt/nuwacoin/sendmultirow.cpp \
+  qt/nuwacoin/send.cpp \
+  qt/nuwacoin/addnewaddressdialog.cpp \
+  qt/nuwacoin/addnewcontactdialog.cpp \
+  qt/nuwacoin/requestdialog.cpp \
+  qt/nuwacoin/receivewidget.cpp \
+  qt/nuwacoin/tooltipmenu.cpp \
+  qt/nuwacoin/addresseswidget.cpp \
+  qt/nuwacoin/defaultdialog.cpp \
+  qt/nuwacoin/coldstakingwidget.cpp \
+  qt/nuwacoin/settings/settingsbackupwallet.cpp \
+  qt/nuwacoin/settings/settingsexportcsv.cpp \
+  qt/nuwacoin/settings/settingsbittoolwidget.cpp \
+  qt/nuwacoin/settings/settingsconsolewidget.cpp \
+  qt/nuwacoin/settings/settingsdisplayoptionswidget.cpp \
+  qt/nuwacoin/settings/settingsfaqwidget.cpp \
+  qt/nuwacoin/settings/settingsinformationwidget.cpp \
+  qt/nuwacoin/settings/settingsmainoptionswidget.cpp \
+  qt/nuwacoin/settings/settingsmultisenddialog.cpp \
+  qt/nuwacoin/settings/settingsmultisendwidget.cpp \
+  qt/nuwacoin/settings/settingssignmessagewidgets.cpp \
+  qt/nuwacoin/settings/settingswalletoptionswidget.cpp \
+  qt/nuwacoin/settings/settingswalletrepairwidget.cpp \
+  qt/nuwacoin/settings/settingswidget.cpp \
+  qt/nuwacoin/welcomecontentwidget.cpp \
+  qt/nuwacoin/splash.cpp
+
+
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+endif
+
+RES_IMAGES = \
+  qt/res/images/about.png
+
+RES_CSS = \
+  qt/nuwacoin/res/css/style_dark.css \
+  qt/nuwacoin/res/css/style_light.css
+
+BITCOIN_RC = qt/res/nuwacoin-qt-res.rc
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
+
+qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS)
+
+nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_nuwacoin_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# nuwacoin-qt binary #
+qt_nuwacoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_nuwacoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_nuwacoin_qt_SOURCES = qt/nuwacoin.cpp
+if TARGET_DARWIN
+  qt_nuwacoin_qt_SOURCES += $(BITCOIN_MM)
+endif
+if TARGET_WINDOWS
+  qt_nuwacoin_qt_SOURCES += $(BITCOIN_RC)
+endif
+qt_nuwacoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+if ENABLE_WALLET
+qt_nuwacoin_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+endif
+if ENABLE_ZMQ
+qt_nuwacoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+endif
+qt_nuwacoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBSAPLING) $(LIBRUSTZCASH) $(LIBZCASH_LIBS) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_nuwacoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_nuwacoin_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+$(srcdir)/qt/nuwacoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+
+translate: $(srcdir)/qt/nuwacoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/nuwacoin.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/nuwacoin_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name nuwacoin_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name nuwacoin $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_nuwacoin_locale.qrc
+
+CLEANFILES += $(CLEAN_QT)
+
+nuwacoin_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_nuwacoin_qt_OBJECTS) qt/nuwacoin-qt$(EXEEXT) $(LIBBITCOINQT)
+
+nuwacoin_qt : qt/nuwacoin-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@

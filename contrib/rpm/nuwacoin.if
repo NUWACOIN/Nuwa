@@ -1,0 +1,157 @@
+
+## <summary>policy for nuwacoin</summary>
+
+
+########################################
+## <summary>
+##	Transition to nuwacoin.
+## </summary>
+## <param name="domain">
+## <summary>
+##	Domain allowed to transition.
+## </summary>
+## </param>
+#
+interface(`nuwacoin_domtrans',`
+	gen_require(`
+		type nuwacoin_t, nuwacoin_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	domtrans_pattern($1, nuwacoin_exec_t, nuwacoin_t)
+')
+
+
+########################################
+## <summary>
+##	Execute nuwacoin server in the nuwacoin domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`nuwacoin_initrc_domtrans',`
+	gen_require(`
+		type nuwacoin_initrc_exec_t;
+	')
+
+	init_labeled_script_domtrans($1, nuwacoin_initrc_exec_t)
+')
+
+
+########################################
+## <summary>
+##	Search nuwacoin lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`nuwacoin_search_lib',`
+	gen_require(`
+		type nuwacoin_var_lib_t;
+	')
+
+	allow $1 nuwacoin_var_lib_t:dir search_dir_perms;
+	files_search_var_lib($1)
+')
+
+########################################
+## <summary>
+##	Read nuwacoin lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`nuwacoin_read_lib_files',`
+	gen_require(`
+		type nuwacoin_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	read_files_pattern($1, nuwacoin_var_lib_t, nuwacoin_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage nuwacoin lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`nuwacoin_manage_lib_files',`
+	gen_require(`
+		type nuwacoin_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_files_pattern($1, nuwacoin_var_lib_t, nuwacoin_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage nuwacoin lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`nuwacoin_manage_lib_dirs',`
+	gen_require(`
+		type nuwacoin_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_dirs_pattern($1, nuwacoin_var_lib_t, nuwacoin_var_lib_t)
+')
+
+
+########################################
+## <summary>
+##	All of the rules required to administrate
+##	a nuwacoin environment
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+## <param name="role">
+##	<summary>
+##	Role allowed access.
+##	</summary>
+## </param>
+## <rolecap/>
+#
+interface(`nuwacoin_admin',`
+	gen_require(`
+		type nuwacoin_t;
+		type nuwacoin_initrc_exec_t;
+		type nuwacoin_var_lib_t;
+	')
+
+	allow $1 nuwacoin_t:process { ptrace signal_perms };
+	ps_process_pattern($1, nuwacoin_t)
+
+	nuwacoin_initrc_domtrans($1)
+	domain_system_change_exemption($1)
+	role_transition $2 nuwacoin_initrc_exec_t system_r;
+	allow $2 system_r;
+
+	files_search_var_lib($1)
+	admin_pattern($1, nuwacoin_var_lib_t)
+
+')
+

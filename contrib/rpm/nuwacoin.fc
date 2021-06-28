@@ -1,0 +1,8 @@
+/usr/bin/nuwacoin-cli		--	gen_context(system_u:object_r:nuwacoin_exec_t,s0)
+/usr/sbin/nuwacoind		--	gen_context(system_u:object_r:nuwacoin_exec_t,s0)
+/usr/lib(64)?/nuwacoin/nuwacoind		--	gen_context(system_u:object_r:nuwacoin_exec_t,s0)
+
+/etc/nuwacoin(/.*)?		gen_context(system_u:object_r:nuwacoin_conf_t,s0)
+/var/lib/nuwacoin(/.*)?		gen_context(system_u:object_r:nuwacoin_var_lib_t,s0)
+
+(/var)?/run/nuwacoind(/.*)?   gen_context(system_u:object_r:nuwacoin_var_run_t,s0)

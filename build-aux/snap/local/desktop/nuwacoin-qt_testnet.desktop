@@ -1,0 +1,15 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=NuwaCoin
+Comment=NuwaCoin QT test network
+GenericName=NuwaCoin Digital Currency QT client testnet network
+Exec=nuwacoin-core.qt-testnet %u
+Terminal=false
+Type=Application
+Icon=${SNAP}/share/pixmaps/nuwacoin_testnet.png
+MimeType=x-scheme-handler/nac;
+Categories=X-Office;X-Finance;
+Keywords=internet;nuwacoin;znac;tbc;core;wallet;qt;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Version=1.0
