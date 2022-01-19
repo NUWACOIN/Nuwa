@@ -1,8 +1,8 @@
-NuwaCoin version *3.2.0* is now available from:  <https://github.com/nuwacoin-project/nuwacoin/releases>
+NuwaCoin version *3.2.0* is now available from:  <https://github.com/NUWACOIN/Nuwa/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/nuwacoin-project/nuwacoin/issues>
+Please report bugs using the issue tracker at github: <https://github.com/NUWACOIN/Nuwa/issues>
 
 
 Mandatory Update
@@ -339,4 +339,4 @@ Thanks to everyone who directly contributed to this release:
 - veilgets
 - warrows
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/nuwacoin-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/NUWACOIN-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

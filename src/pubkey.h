@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2016-2018 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_PUBKEY_H
-#define NuwaCoin_PUBKEY_H
+#ifndef NUWACOIN_PUBKEY_H
+#define NUWACOIN_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -265,4 +265,4 @@ public:
     ~ECCVerifyHandle();
 };
 
-#endif // NuwaCoin_PUBKEY_H
+#endif // NUWACOIN_PUBKEY_H

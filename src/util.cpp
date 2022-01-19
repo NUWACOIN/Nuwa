@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -86,9 +86,9 @@
 #include <openssl/crypto.h>
 #include <openssl/rand.h>
 
-const char * const NuwaCoin_CONF_FILENAME = "nuwacoin.conf";
-const char * const NuwaCoin_PID_FILENAME = "nuwacoin.pid";
-const char * const NuwaCoin_MASTERNODE_CONF_FILENAME = "masternode.conf";
+const char * const NUWACOIN_CONF_FILENAME = "nuwacoin.conf";
+const char * const NUWACOIN_PID_FILENAME = "nuwacoin.pid";
+const char * const NUWACOIN_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
 // NuwaCoin only features
@@ -453,13 +453,13 @@ void ClearDatadirCache()
 
 fs::path GetConfigFile()
 {
-    fs::path pathConfigFile(GetArg("-conf", NuwaCoin_CONF_FILENAME));
+    fs::path pathConfigFile(GetArg("-conf", NUWACOIN_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile, false);
 }
 
 fs::path GetMasternodeConfigFile()
 {
-    fs::path pathConfigFile(GetArg("-mnconf", NuwaCoin_MASTERNODE_CONF_FILENAME));
+    fs::path pathConfigFile(GetArg("-mnconf", NUWACOIN_MASTERNODE_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile);
 }
 
@@ -502,7 +502,7 @@ fs::path AbsPathForConfigVal(const fs::path& path, bool net_specific)
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(GetArg("-pid", NuwaCoin_PID_FILENAME));
+    fs::path pathPidFile(GetArg("-pid", NUWACOIN_PID_FILENAME));
     return AbsPathForConfigVal(pathPidFile);
 }
 

@@ -32,10 +32,10 @@ git config --global user.email "MY_NAME@example.com"
 Fetching the Build Script
 --------------------------
 
-The build script we'll be using is contained in the NuwaCoin github repository ([contrib/gitian-build.py](https://github.com/nuwacoin-project/nuwacoin/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the NuwaCoin repository and will need to fetch this script with the following commands:
+The build script we'll be using is contained in the NuwaCoin github repository ([contrib/gitian-build.py](https://github.com/NUWACOIN/Nuwa/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the NuwaCoin repository and will need to fetch this script with the following commands:
 
 ```bash
-curl -L -O https://raw.githubusercontent.com/NuwaCoin-Project/NuwaCoin/master/contrib/gitian-build.py
+curl -L -O https://raw.githubusercontent.com/NUWACOIN/Nuwa/master/contrib/gitian-build.py
 chmod +x gitian-build.py
 ```
 

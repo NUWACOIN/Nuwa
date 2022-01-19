@@ -112,7 +112,7 @@ gpg --output ${VERSION}-win-unsigned/$NAME/nuwacoin-win-${VERSION%\.*}-build.ass
 Uploading Signatures
 --------------------
 Make a Pull Request (both the `.assert` and `.assert.sig` files) to the
-[gitian.sigs](https://github.com/nuwacoin-project/gitian.sigs/) repository:
+[gitian.sigs](https://github.com/NUWACOIN/gitian.sigs/) repository:
 
 ```bash
 git checkout -b ${VERSION}-not-codesigned

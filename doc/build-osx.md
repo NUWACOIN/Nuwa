@@ -43,7 +43,7 @@ Build NuwaCoin
 
 1. Clone the NuwaCoin source code:
 
-        git clone https://github.com/nuwacoin-project/nuwacoin
+        git clone https://github.com/NUWACOIN/Nuwa
         cd nuwacoin
 
 2.  Make the Homebrew OpenSSL headers visible to the configure script  (do ```brew info openssl``` to find out why this is necessary, or if you use Homebrew with installation folders different from the default).

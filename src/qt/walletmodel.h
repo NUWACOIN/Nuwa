@@ -1,12 +1,12 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2016 The Dash developers
 // Copyright (c) 2017-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_QT_WALLETMODEL_H
-#define NuwaCoin_QT_WALLETMODEL_H
+#ifndef NUWACOIN_QT_WALLETMODEL_H
+#define NUWACOIN_QT_WALLETMODEL_H
 
 #include "askpassphrasedialog.h"
 #include "paymentrequestplus.h"
@@ -346,4 +346,4 @@ public Q_SLOTS:
     bool updateAddressBookLabels(const CTxDestination& address, const std::string& strName, const std::string& strPurpose);
 };
 
-#endif // NuwaCoin_QT_WALLETMODEL_H
+#endif // NUWACOIN_QT_WALLETMODEL_H

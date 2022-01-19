@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_KEY_IO_H
-#define NuwaCoin_KEY_IO_H
+#ifndef NUWACOIN_KEY_IO_H
+#define NUWACOIN_KEY_IO_H
 
 #include "chainparams.h"
 #include "key.h"
@@ -25,4 +25,4 @@ namespace KeyIO {
 
 }
 
-#endif //NuwaCoin_KEY_IO_H
+#endif //NUWACOIN_KEY_IO_H

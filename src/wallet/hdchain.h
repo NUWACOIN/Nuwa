@@ -1,10 +1,10 @@
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_HDCHAIN_H
-#define NuwaCoin_HDCHAIN_H
+#ifndef NUWACOIN_HDCHAIN_H
+#define NUWACOIN_HDCHAIN_H
 
 #include "key.h"
 
@@ -73,4 +73,4 @@ public:
     }
 };
 
-#endif // NuwaCoin_HDCHAIN_H
+#endif // NUWACOIN_HDCHAIN_H

@@ -24,18 +24,18 @@ URL:		https://nuwacoin.org/
 Source0:	https://nuwacoin.org/bin/nuwacoin-core-%{version}/nuwacoin-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/contrib/debian/examples/nuwacoin.conf
+Source10:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/contrib/debian/examples/nuwacoin.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/doc/man/nuwacoind.1
-Source21:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/doc/man/nuwacoin-cli.1
-Source22:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/doc/man/nuwacoin-qt.1
+Source20:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/doc/man/nuwacoind.1
+Source21:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/doc/man/nuwacoin-cli.1
+Source22:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/doc/man/nuwacoin-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/contrib/rpm/nuwacoin.te
+Source30:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/contrib/rpm/nuwacoin.te
 # Source31 - what about nuwacoin-tx and bench_nuwacoin ???
-Source31:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/contrib/rpm/nuwacoin.fc
-Source32:	https://raw.githubusercontent.com/nuwacoin-project/nuwacoin/v%{version}/contrib/rpm/nuwacoin.if
+Source31:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/contrib/rpm/nuwacoin.fc
+Source32:	https://raw.githubusercontent.com/NUWACOIN/Nuwa/v%{version}/contrib/rpm/nuwacoin.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 

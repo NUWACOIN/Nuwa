@@ -29,8 +29,8 @@ Build-Depends: debhelper,
  dh-systemd
 Standards-Version: 3.9.2
 Homepage: http://www.nuwacoin.org
-Vcs-Git: git://github.com/NuwaCoin-Project/NuwaCoin.git
-Vcs-Browser: http://github.com/NuwaCoin-Project/NuwaCoin
+Vcs-Git: git://github.com/NUWACOIN/Nuwa.git
+Vcs-Browser: http://github.com/NUWACOIN/Nuwa
 
 Package: nuwacoind
 Architecture: any
