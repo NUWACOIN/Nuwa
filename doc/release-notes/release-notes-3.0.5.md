@@ -1,13 +1,13 @@
 NuwaCoin version 3.0.5 is now available from:
 
-  <https://github.com/nuwacoin-project/nuwacoin/releases>
+  <https://github.com/NUWACOIN/Nuwa/releases>
 
 This is a new minor-revision version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/nuwacoin-project/nuwacoin/issues>
+  <https://github.com/NUWACOIN/Nuwa/issues>
 
 
 Mandatory Update
@@ -52,11 +52,11 @@ The zNAC accumulator code has undergone a major refactor. Accumulators are one o
 
 libzerocoin Exploit Fix
 ---------------------
-zNAC relies on a 3rd party library called libzerocoin. All currencies that utilize the zerocoin protocol use libzerocoin, and many of those currencies have been exposed to an exploit which allowed for the creation of multiple zero-knowledge spending proofs for one single zerocoin mint. The Nüwa Coin developers were able properly identify the exploit, track down any fraudulent spending proofs, link the fraudulent spending proofs with their one valid proof that they were mutated from, and remove any mints from the accumulators that were derived from the invalid spends. 
+zNAC relies on a 3rd party library called libzerocoin. All currencies that utilize the zerocoin protocol use libzerocoin, and many of those currencies have been exposed to an exploit which allowed for the creation of multiple zero-knowledge spending proofs for one single zerocoin mint. The Nï¿½wa Coin developers were able properly identify the exploit, track down any fraudulent spending proofs, link the fraudulent spending proofs with their one valid proof that they were mutated from, and remove any mints from the accumulators that were derived from the invalid spends. 
 
 zNAC Maintenance Mode Spork
 ---------------------
-Handling the above noted libzerocoin exploit required the NuwaCoin team to immediately release a patched wallet to as many users as possible which rejected bad spends and also disabled all zNAC transactions in general. The process of releasing a patched wallet in such a small time frame is frustrating and difficult for all members of the NuwaCoin team and especially users of NuwaCoin. The Nüwa Coin developers have added a new spork which allows for zNAC transacting to be turned on/off without having to release a patched wallet. This will allow much smoother operation if any problems occur in the future, and should also allow exchanges and 3rd party services to continue to operate even if zNAC is in maintenance mode.
+Handling the above noted libzerocoin exploit required the NuwaCoin team to immediately release a patched wallet to as many users as possible which rejected bad spends and also disabled all zNAC transactions in general. The process of releasing a patched wallet in such a small time frame is frustrating and difficult for all members of the NuwaCoin team and especially users of NuwaCoin. The Nï¿½wa Coin developers have added a new spork which allows for zNAC transacting to be turned on/off without having to release a patched wallet. This will allow much smoother operation if any problems occur in the future, and should also allow exchanges and 3rd party services to continue to operate even if zNAC is in maintenance mode.
 
 Money Supply Indexing
 ---------------------
@@ -108,4 +108,4 @@ Thanks to everyone who directly contributed to this release:
 - presstab
 - rejectedpromise
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/nuwacoin-project-translations/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/NUWACOIN-translations/).

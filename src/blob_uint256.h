@@ -2,12 +2,12 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_BLOB_UINT256_H
-#define NuwaCoin_BLOB_UINT256_H
+#ifndef NUWACOIN_BLOB_UINT256_H
+#define NUWACOIN_BLOB_UINT256_H
 
 #include <assert.h>
 #include <cstring>
@@ -174,4 +174,4 @@ inline blob_uint256 blob_uint256S(const std::string& str)
 const blob_uint256 BLOB_UINT256_ZERO = blob_uint256();
 const blob_uint256 BLOB_UINT256_ONE = blob_uint256S("0000000000000000000000000000000000000000000000000000000000000001");
 
-#endif // NuwaCoin_BLOB_UINT256_H
+#endif // NUWACOIN_BLOB_UINT256_H

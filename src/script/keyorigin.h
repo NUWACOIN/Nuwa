@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_SCRIPT_KEYORIGIN_H
-#define NuwaCoin_SCRIPT_KEYORIGIN_H
+#ifndef NUWACOIN_SCRIPT_KEYORIGIN_H
+#define NUWACOIN_SCRIPT_KEYORIGIN_H
 
 #include <serialize.h>
 #include <vector>
@@ -52,4 +52,4 @@ struct KeyOriginInfo
     }
 };
 
-#endif // NuwaCoin_SCRIPT_KEYORIGIN_H
+#endif // NUWACOIN_SCRIPT_KEYORIGIN_H

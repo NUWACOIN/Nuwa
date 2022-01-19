@@ -26,7 +26,7 @@ Drag NuwaCoin-Qt to your applications folder, and then run NuwaCoin-Qt.
 
 ### Need Help?
 
-* See the documentation at the [NuwaCoin Wiki](https://github.com/NuwaCoin-Project/NuwaCoin/wiki)
+* See the documentation at the [NuwaCoin Wiki](https://github.com/NUWACOIN/Nuwa/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [NuwaCoin Forum](http://forum.nuwacoin.org/).
 * Join our Discord server [Discord Server](https://discord.nuwacoin.org)

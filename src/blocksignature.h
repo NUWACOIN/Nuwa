@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2019 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_BLOCKSIGNATURE_H
-#define NuwaCoin_BLOCKSIGNATURE_H
+#ifndef NUWACOIN_BLOCKSIGNATURE_H
+#define NUWACOIN_BLOCKSIGNATURE_H
 
 #include "key.h"
 #include "primitives/block.h"
@@ -14,4 +14,4 @@ bool SignBlockWithKey(CBlock& block, const CKey& key);
 bool SignBlock(CBlock& block, const CKeyStore& keystore);
 bool CheckBlockSignature(const CBlock& block, const bool enableP2PKH);
 
-#endif //NuwaCoin_BLOCKSIGNATURE_H
+#endif //NUWACOIN_BLOCKSIGNATURE_H

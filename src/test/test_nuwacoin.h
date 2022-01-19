@@ -1,13 +1,14 @@
 // Copyright (c) 2015-2019 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_TEST_TEST_NuwaCoin_H
-#define NuwaCoin_TEST_TEST_NuwaCoin_H
+#ifndef NUWACOIN_TEST_TEST_NUWACOIN_H
+#define NUWACOIN_TEST_TEST_NUWACOIN_H
 
 #include "fs.h"
 #include "txdb.h"
+#include "random.h"
 
 #include <boost/thread.hpp>
 

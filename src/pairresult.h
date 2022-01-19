@@ -1,10 +1,10 @@
 // Copyright (c) 2019 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_PAIRRESULT_H
-#define NuwaCoin_PAIRRESULT_H
+#ifndef NUWACOIN_PAIRRESULT_H
+#define NUWACOIN_PAIRRESULT_H
 
 
 class PairResult {
@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //NuwaCoin_PAIRRESULT_H
+#endif //NUWACOIN_PAIRRESULT_H

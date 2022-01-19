@@ -1,10 +1,10 @@
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_SAPLINGSCRIPTPUBKEYMAN_H
-#define NuwaCoin_SAPLINGSCRIPTPUBKEYMAN_H
+#ifndef NUWACOIN_SAPLINGSCRIPTPUBKEYMAN_H
+#define NUWACOIN_SAPLINGSCRIPTPUBKEYMAN_H
 
 #include "wallet/hdchain.h"
 #include "wallet/wallet.h"
@@ -79,4 +79,4 @@ private:
     CHDChain hdChain;
 };
 
-#endif //NuwaCoin_SAPLINGSCRIPTPUBKEYMAN_H
+#endif //NUWACOIN_SAPLINGSCRIPTPUBKEYMAN_H

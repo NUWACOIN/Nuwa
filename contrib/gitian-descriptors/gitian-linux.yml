@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/nuwacoin-project/nuwacoin.git"
+- "url": "https://github.com/NUWACOIN/Nuwa.git"
   "dir": "nuwacoin"
 files: []
 script: |
@@ -123,7 +123,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd nuwacoin
+  cd Nuwa
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do

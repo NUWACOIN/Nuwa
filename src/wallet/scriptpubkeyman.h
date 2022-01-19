@@ -1,11 +1,11 @@
 // Copyright (c) 2019 The Bitcoin Core developers
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_SCRIPTPUBKEYMAN_H
-#define NuwaCoin_SCRIPTPUBKEYMAN_H
+#ifndef NUWACOIN_SCRIPTPUBKEYMAN_H
+#define NUWACOIN_SCRIPTPUBKEYMAN_H
 
 #include "wallet/hdchain.h"
 #include "wallet/wallet.h"
@@ -161,4 +161,4 @@ private:
 };
 
 
-#endif //NuwaCoin_SCRIPTPUBKEYMAN_H
+#endif //NUWACOIN_SCRIPTPUBKEYMAN_H

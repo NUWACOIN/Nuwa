@@ -2,12 +2,12 @@
 // Copyright (c) 2013-2014 The NovaCoin Developers
 // Copyright (c) 2014-2018 The BlackCoin Developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_LEGACY_MODIFIER_H
-#define NuwaCoin_LEGACY_MODIFIER_H
+#ifndef NUWACOIN_LEGACY_MODIFIER_H
+#define NUWACOIN_LEGACY_MODIFIER_H
 
 #include "chain.h"
 #include "stakeinput.h"
@@ -16,4 +16,4 @@
 bool GetOldStakeModifier(CStakeInput* stake, uint64_t& nStakeModifier);
 bool ComputeNextStakeModifier(const CBlockIndex* pindexPrev, uint64_t& nStakeModifier, bool& fGeneratedStakeModifier);
 
-#endif // NuwaCoin_LEGACY_MODIFIER_H
+#endif // NUWACOIN_LEGACY_MODIFIER_H

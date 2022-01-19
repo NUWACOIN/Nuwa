@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_KEY_H
-#define NuwaCoin_KEY_H
+#ifndef NUWACOIN_KEY_H
+#define NUWACOIN_KEY_H
 
 #include "allocators.h"
 #include "serialize.h"
@@ -182,4 +182,4 @@ void ECC_Stop(void);
 /** Check that required EC support is available at runtime. */
 bool ECC_InitSanityCheck(void);
 
-#endif // NuwaCoin_KEY_H
+#endif // NUWACOIN_KEY_H

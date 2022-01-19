@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_CORE_NEW_GUI_NuwaCoinGUI_H
-#define NuwaCoin_CORE_NEW_GUI_NuwaCoinGUI_H
+#ifndef NUWACOIN_CORE_NEW_GUI_NuwaCoinGUI_H
+#define NUWACOIN_CORE_NEW_GUI_NuwaCoinGUI_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/nuwacoin-config.h"
@@ -189,4 +189,4 @@ Q_SIGNALS:
 };
 
 
-#endif //NuwaCoin_CORE_NEW_GUI_NuwaCoinGUI_H
+#endif //NUWACOIN_CORE_NEW_GUI_NuwaCoinGUI_H

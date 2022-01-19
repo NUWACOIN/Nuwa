@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_UINT512_H
-#define NuwaCoin_UINT512_H
+#ifndef NUWACOIN_UINT512_H
+#define NUWACOIN_UINT512_H
 
 #include "arith_uint256.h"
 #include "blob_uint256.h"
@@ -40,4 +40,4 @@ inline blob_uint512 blob_uint512S(const char* str)
     return rv;
 }
 
-#endif // NuwaCoin_UINT512_H
+#endif // NUWACOIN_UINT512_H

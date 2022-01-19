@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2015-2019 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_SERIALIZE_H
-#define NuwaCoin_SERIALIZE_H
+#ifndef NUWACOIN_SERIALIZE_H
+#define NUWACOIN_SERIALIZE_H
 
 #include <algorithm>
 #include <array>
@@ -961,4 +961,4 @@ size_t GetSerializeSize(const S& s, const T& t)
     return (CSizeComputer(s.GetType(), s.GetVersion()) << t).size();
 }
 
-#endif // NuwaCoin_SERIALIZE_H
+#endif // NUWACOIN_SERIALIZE_H

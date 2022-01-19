@@ -1,7 +1,7 @@
 # Copyright (c) 2018-2019 The Ion developers
 # Copyright (c) 2019 The PIVX developers
 # Copyright (c) 2020 The PIVX developers
-# Copyright (c) 2021 The Nüwa Coin developers
+# Copyright (c) 2021 The Nï¿½wa Coin developers
 name: nuwacoin-core
 base: core18
 version: 4.3.0
@@ -70,7 +70,7 @@ apps:
     plugs: [home]
 parts:
   nuwacoin-core:
-    source: https://github.com/NuwaCoin-Project/NuwaCoin
+    source: https://github.com/NUWACOIN/Nuwa
     source-type: git
     source-tag: master
     plugin: nil

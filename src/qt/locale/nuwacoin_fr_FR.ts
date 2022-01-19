@@ -1887,9 +1887,9 @@ STAKING</source>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/nuwacoin-project/nuwacoin-project-translations</source>
+https://www.transifex.com/NUWACOIN/Nuwa-translations</source>
         <translation>Langue manquante ou traduction incomplète? Aidez-nous à traduire ce projet ici:
-https://www.transifex.com/nuwacoin-project/nuwacoin-project-translations</translation>
+https://www.transifex.com/NUWACOIN/Nuwa-translations</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>

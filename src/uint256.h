@@ -2,12 +2,12 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_UINT256_H
-#define NuwaCoin_UINT256_H
+#ifndef NUWACOIN_UINT256_H
+#define NUWACOIN_UINT256_H
 
 #include "arith_uint256.h"
 #include <assert.h>
@@ -141,4 +141,4 @@ arith_uint512 UintToArith512(const uint512 &);
 const uint256 UINT256_ZERO = uint256();
 const uint256 UINT256_ONE = uint256("0000000000000000000000000000000000000000000000000000000000000001");
 
-#endif // NuwaCoin_UINT256_H
+#endif // NUWACOIN_UINT256_H

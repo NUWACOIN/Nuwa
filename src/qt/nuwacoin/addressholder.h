@@ -1,10 +1,10 @@
 // Copyright (c) 2019 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_ADDRESSHOLDER_H
-#define NuwaCoin_ADDRESSHOLDER_H
+#ifndef NUWACOIN_ADDRESSHOLDER_H
+#define NUWACOIN_ADDRESSHOLDER_H
 
 #include <QWidget>
 #include <QColor>
@@ -39,4 +39,4 @@ public:
 };
 
 
-#endif //NuwaCoin_ADDRESSHOLDER_H
+#endif //NUWACOIN_ADDRESSHOLDER_H

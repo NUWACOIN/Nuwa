@@ -1,11 +1,11 @@
 // Copyright (c) 2016-2018 The Zcash developers
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_KEY_IO_SAPLING_H
-#define NuwaCoin_KEY_IO_SAPLING_H
+#ifndef NUWACOIN_KEY_IO_SAPLING_H
+#define NUWACOIN_KEY_IO_SAPLING_H
 
 #include "chainparams.h"
 #include "sapling/zip32.h"
@@ -20,4 +20,4 @@ namespace KeyIO {
     libzcash::SpendingKey DecodeSpendingKey(const std::string& str);
 }
 
-#endif //NuwaCoin_KEY_IO_SAPLING_H
+#endif //NUWACOIN_KEY_IO_SAPLING_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2017-2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef NuwaCoin_STAKEINPUT_H
-#define NuwaCoin_STAKEINPUT_H
+#ifndef NUWACOIN_STAKEINPUT_H
+#define NUWACOIN_STAKEINPUT_H
 
 #include "chain.h"
 #include "streams.h"
@@ -56,4 +56,4 @@ public:
 };
 
 
-#endif //NuwaCoin_STAKEINPUT_H
+#endif //NUWACOIN_STAKEINPUT_H

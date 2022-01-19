@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/nuwacoin-project/nuwacoin-detached-sigs.git"
+- "url": "https://github.com/NUWACOIN/Nuwa-detached-sigs.git"
   "dir": "signature"
 files:
 - "nuwacoin-osx-unsigned.tar.gz"

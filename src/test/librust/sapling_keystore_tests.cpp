@@ -1,10 +1,11 @@
 // Copyright (c) 2016-2020 The ZCash developers
 // Copyright (c) 2020 The PIVX developers
-// Copyright (c) 2021 The Nüwa Coin developers
+// Copyright (c) 2021 The Nï¿½wa Coin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "test/test_nuwacoin.h"
+#include "utilstrencodings.h"
 
 #include "sapling/address.hpp"
 #include "sapling/util.h"
